@@ -30,7 +30,8 @@ public class SchedulerRunner extends Runner {
         animator.printActions(state.getOutTransitions()) ;
 
         System.out.println("\nState if swap(process2)");
-        System.out.println("processus actifs : " + state.getOutTransitions().get(0).getDestination().eval("active"));
+        System.out.println("processus actifs : " 
+        + state.getOutTransitions().get(0).getDestination().eval("active"));
         System.out.println("processus ready : " + state.getOutTransitions().get(0).getDestination().eval("ready"));
 
         System.out.println("\nState if swap(process3)");

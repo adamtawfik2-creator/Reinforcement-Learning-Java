@@ -17,9 +17,9 @@ OPERATIONS
             film : Films
         THEN
             SELECT film = A THEN
-                res := OK
+                res := OK 
             WHEN film = B THEN
-                res := OK
+                res := OK 
             WHEN film = C THEN
                 res := KO
             END

@@ -21,18 +21,22 @@ public class SimpleRunner extends Runner{
     public void execSequence() throws Exception {        
         // Here we start the animation
         this.state = state.perform("choose", "film = A").explore() ;
+        System.out.println("Evaluation : " + this.state.eval("res"));
         animator.printState(state) ;
         animator.printActions(state.getOutTransitions()) ;
 
         state = state.perform("choose", "film = B").explore() ;
+        System.out.println("Evaluation : " + this.state.eval("res"));
         animator.printState(state) ;
         animator.printActions(state.getOutTransitions()) ;
 
         state = state.perform("choose", "film = C").explore() ;
+        System.out.println("Evaluation : " + this.state.eval("res"));
         animator.printState(state) ;
         animator.printActions(state.getOutTransitions()) ;
 
         state = state.perform("choose", "film = A").explore() ;
+        System.out.println("Evaluation : " + this.state.eval("res"));
         animator.printState(state) ;
         animator.printActions(state.getOutTransitions()) ;
 

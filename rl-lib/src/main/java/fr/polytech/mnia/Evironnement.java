@@ -7,9 +7,11 @@ import de.prob.statespace.Transition;
 
 public class Evironnement {
     private State state ; 
+    private State initial ;
 
     public Evironnement(Runner runner){
         this.state = runner.state ;
+        this.initial = state ; 
     }
     public void runAction(Transition t){
         state = t.getDestination().explore() ;
