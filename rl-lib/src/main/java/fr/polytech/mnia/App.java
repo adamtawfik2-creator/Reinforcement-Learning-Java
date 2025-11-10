@@ -1,23 +1,31 @@
 package fr.polytech.mnia;
+import java.util.Scanner;
 
-public class App 
-{
-    public static void main( String[] args ) throws Exception{           
-        
-        SimpleRunner sr = new SimpleRunner() ;
-        sr.execSequence() ; 
+public class App {
+    public static void main(String[] args) throws Exception {
+         Scanner scanner = new Scanner(System.in);
 
-        // SchedulerRunner sc = new SchedulerRunner() ;
-        // sc.execSequence();
+        // Choix de l'environnement
+        System.out.println("Choisissez l’environnement : [simple / tictactoe]");
+        String env = scanner.nextLine().trim().toLowerCase();
 
-        //TicTacToeRunner tr = new TicTacToeRunner() ;
-        //tr.execSequence();
+        // Choix de l'algorithme
+        System.out.println("Choisissez l’algorithme : [epsilon / gradient / ucb / q / value / policy]");
+        String algo = scanner.nextLine().trim().toLowerCase();
 
-        //Evironnement env = new Evironnement(new SimpleRunner()) ;
+        // Lancer le bon environnement
+        switch (env) {
+            case "simple":
+                new SimpleRunner().runAgent(algo);
+                break;
+            case "tictactoe":
+                new TicTacToeRunner().runAgent(algo);
+                break;
+            default:
+                System.out.println("Environnement inconnu.");
+        }
 
-        //System.out.println(env.getState().eval("res"));
-        //System.out.println(env.getActions().toString());
-
+        scanner.close();
         System.exit(0);
-    }    
-}
+    }
+    }
